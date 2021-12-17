@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Camera;
+import java.text.DecimalFormat;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -73,19 +74,37 @@ public class classification extends AppCompatActivity {
 
         // searching for the index with maximum score
         float maxScore = -Float.MAX_VALUE;
+        float secondScore = -Float.MAX_VALUE;
         int maxScoreIdx = -1;
+        int secondScoreIdx = -1;
         for (int i = 0; i < scores.length; i++) {
             if (scores[i] > maxScore) {
+                if(maxScore > secondScore){
+                    secondScore = maxScore;
+                    secondScoreIdx = maxScoreIdx;
+                }
                 maxScore = scores[i];
                 maxScoreIdx = i;
             }
+            else if(scores[i] > secondScore){
+                secondScore = scores[i];
+                secondScoreIdx = i;
+            }
         }
 
-        String className = ImageNetClasses.IMAGENET_CLASSES[maxScoreIdx];
-
+        String firstName = ImageNetClasses.IMAGENET_CLASSES[maxScoreIdx];
+        String secondName = ImageNetClasses.IMAGENET_CLASSES[secondScoreIdx];
+        String score1 = new DecimalFormat("#.00").format (maxScore);
+        String score2 = new DecimalFormat("#.00").format (secondScore);
         // showing className on UI
-        TextView textView = findViewById(R.id.class_text);
-        textView.setText(className);
+        TextView textView = findViewById(R.id.first_class);
+        textView.setText(firstName);
+        TextView scoreView = findViewById(R.id.first_score);
+        scoreView.setText(score1);
+        TextView textView2 = findViewById(R.id.second_class);
+        textView2.setText(secondName);
+        TextView scoreView2 = findViewById(R.id.second_score);
+        scoreView2.setText(score2);
     }
 
     /**

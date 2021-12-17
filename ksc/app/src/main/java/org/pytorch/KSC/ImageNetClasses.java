@@ -2,10 +2,10 @@ package org.pytorch.KSC;
 
 public class ImageNetClasses {
   public static String[] IMAGENET_CLASSES = new String[]{
-          "one",
-          "onep",
-          "onepp",
-          "three",
-          "two"
+          "1등급",
+          "1+등급",
+          "1++등급",
+          "3등급",
+          "2등급"
   };
 }

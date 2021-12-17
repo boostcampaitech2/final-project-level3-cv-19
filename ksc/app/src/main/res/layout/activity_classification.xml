@@ -12,31 +12,85 @@
         <ImageView
             android:id="@+id/class_image"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginRight="10dp"
             android:layout_marginLeft="10dp"
             android:layout_weight="90"
             />
-
-        <TextView
-            android:id="@+id/class_text"
+        <TableLayout
+            android:layout_marginTop="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            android:background="#80000000"
-            android:textColor="@android:color/white"
-            android:textSize="18sp"
-            />
+            android:stretchColumns="0,1">
+                <TableRow>
+
+                        <TextView
+                            android:layout_marginLeft="5dp"
+                            android:gravity="center"
+                            android:text="등급"
+                            android:textColor="@android:color/darker_gray"
+                            android:textSize="30sp"
+                            />
+
+                        <TextView
+                            android:gravity="center"
+                            android:text="score"
+                            android:textColor="@android:color/darker_gray"
+                            android:textSize="30sp" />
+                </TableRow>
+                <TableRow>
+
+                        <TextView
+                            android:layout_marginLeft="5dp"
+                            android:id="@+id/first_class"
+                            android:layout_height="50dp"
+                            android:layout_width="match_parent"
+                            android:gravity="center"
+                            android:textSize="24sp"
+                            />
+
+                        <TextView
+                            android:id="@+id/first_score"
+                            android:layout_height="50dp"
+                            android:layout_width="match_parent"
+                            android:gravity="center"
+                            android:textSize="24sp"
+                            />
+                </TableRow>
+                <TableRow>
+
+                        <TextView
+                            android:layout_marginLeft="5dp"
+                            android:id="@+id/second_class"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:gravity="center"
+                            android:layout_gravity="bottom"
+
+                            android:textColor="@android:color/background_light"
+                            android:textSize="24sp"
+                            />
+
+                        <TextView
+                            android:id="@+id/second_score"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:gravity="center"
+                            android:layout_gravity="bottom"
+                            android:textColor="@android:color/background_light"
+                            android:textSize="24sp"
+                            />
+                </TableRow>
+        </TableLayout>
 
         <Button
             android:id="@+id/camera_continue"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="70dp"
+            android:layout_height="50dp"
             android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
             android:background="@drawable/radius"
             android:layout_gravity="center"
-            android:text="take picture"
+            android:text="재촬영"
             />
 
 </LinearLayout>
