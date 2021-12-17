@@ -52,7 +52,27 @@ public class CameraActivity extends AppCompatActivity implements ImageAnalysis.A
         previewView = findViewById(R.id.viewFinder);
         bCapture = findViewById(R.id.bCapture);
         crop = findViewById(R.id.crop);
-        bCapture.setOnClickListener(this);
+        bCapture.setOnClickListener(new myListener() {
+            @Override
+            public void onSingleClick(View v) {
+                imageCapture.takePicture(
+                        getExecutor(),
+                        new ImageCapture.OnImageCapturedCallback() {
+                            @Override
+                            public void onCaptureSuccess(ImageProxy capturedImage) {
+                                Bitmap bitmap = imageProxyToBitmap(capturedImage);
+                                Toast.makeText(CameraActivity.this, "Photo has been captured successfully.", Toast.LENGTH_SHORT).show();
+                                preprocess(bitmap);
+                            }
+
+                            @Override
+                            public void onError(@NonNull ImageCaptureException exception) {
+                                Toast.makeText(CameraActivity.this, "Error capturing photo: " + exception.getMessage(), Toast.LENGTH_SHORT).show();
+                            }
+                        });
+                //send();
+            }
+        });
 
         cameraProviderFuture = ProcessCameraProvider.getInstance(this);
         cameraProviderFuture.addListener(() -> {
@@ -114,23 +134,6 @@ public class CameraActivity extends AppCompatActivity implements ImageAnalysis.A
     @SuppressLint("RestrictedApi")
     @Override
     public void onClick(View view) {
-        imageCapture.takePicture(
-                getExecutor(),
-                new ImageCapture.OnImageCapturedCallback() {
-                    @Override
-                    public void onCaptureSuccess(ImageProxy capturedImage) {
-                        Bitmap bitmap = imageProxyToBitmap(capturedImage);
-                        Toast.makeText(CameraActivity.this, "Photo has been captured successfully.", Toast.LENGTH_SHORT).show();
-                        preprocess(bitmap);
-                    }
-
-                    @Override
-                    public void onError(@NonNull ImageCaptureException exception) {
-                        Toast.makeText(CameraActivity.this, "Error capturing photo: " + exception.getMessage(), Toast.LENGTH_SHORT).show();
-                    }
-                });
-        //send();
-
     }
     private Bitmap imageProxyToBitmap(ImageProxy image) {
         ImageProxy.PlaneProxy planeProxy = image.getPlanes()[0];
