@@ -34,7 +34,7 @@
 
                         <TextView
                             android:gravity="center"
-                            android:text="score"
+                            android:text="확률"
                             android:textColor="@android:color/darker_gray"
                             android:textSize="30sp" />
                 </TableRow>
@@ -46,6 +46,7 @@
                             android:layout_height="50dp"
                             android:layout_width="match_parent"
                             android:gravity="center"
+                            android:textColor="#ffd700"
                             android:textSize="24sp"
                             />
 
@@ -54,6 +55,7 @@
                             android:layout_height="50dp"
                             android:layout_width="match_parent"
                             android:gravity="center"
+                            android:textColor="#ffd700"
                             android:textSize="24sp"
                             />
                 </TableRow>
@@ -67,7 +69,7 @@
                             android:gravity="center"
                             android:layout_gravity="bottom"
 
-                            android:textColor="@android:color/background_light"
+                            android:textColor="#c0c0c0"
                             android:textSize="24sp"
                             />
 
@@ -77,7 +79,7 @@
                             android:layout_height="50dp"
                             android:gravity="center"
                             android:layout_gravity="bottom"
-                            android:textColor="@android:color/background_light"
+                            android:textColor="#c0c0c0"
                             android:textSize="24sp"
                             />
                 </TableRow>
@@ -88,6 +90,7 @@
             android:layout_width="70dp"
             android:layout_height="50dp"
             android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"
             android:background="@drawable/radius"
             android:layout_gravity="center"
             android:text="재촬영"

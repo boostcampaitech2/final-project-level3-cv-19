@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.Camera;
+
 import java.text.DecimalFormat;
 import android.os.Bundle;
 import android.util.Log;
@@ -77,7 +77,9 @@ public class classification extends AppCompatActivity {
         float secondScore = -Float.MAX_VALUE;
         int maxScoreIdx = -1;
         int secondScoreIdx = -1;
+        float sum = 0;
         for (int i = 0; i < scores.length; i++) {
+            sum+=Math.exp(scores[i]);
             if (scores[i] > maxScore) {
                 if(maxScore > secondScore){
                     secondScore = maxScore;
@@ -91,20 +93,21 @@ public class classification extends AppCompatActivity {
                 secondScoreIdx = i;
             }
         }
-
+        float maxpercent = (float)Math.exp(maxScore) / sum * 100;
+        float secondpercent = (float)Math.exp(secondScore) / sum * 100;
         String firstName = ImageNetClasses.IMAGENET_CLASSES[maxScoreIdx];
         String secondName = ImageNetClasses.IMAGENET_CLASSES[secondScoreIdx];
-        String score1 = new DecimalFormat("#.00").format (maxScore);
-        String score2 = new DecimalFormat("#.00").format (secondScore);
+        String score1 = new DecimalFormat("#.00").format (maxpercent);
+        String score2 = new DecimalFormat("#.00").format (secondpercent);
         // showing className on UI
         TextView textView = findViewById(R.id.first_class);
         textView.setText(firstName);
         TextView scoreView = findViewById(R.id.first_score);
-        scoreView.setText(score1);
+        scoreView.setText(score1+ '%');
         TextView textView2 = findViewById(R.id.second_class);
         textView2.setText(secondName);
         TextView scoreView2 = findViewById(R.id.second_score);
-        scoreView2.setText(score2);
+        scoreView2.setText(score2+ '%');
     }
 
     /**
