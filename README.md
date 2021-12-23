@@ -36,18 +36,10 @@ Final Project in 2nd BoostCamp AI Tech 2기 by **빨간맛(CV 19조)**
 
 
 ## Model
--  2단계로 구성 (Segmentation -> Classification 2)
-
-	-  Segmentation
-  
-		- UNet (Encoder: ResNet50)
-		- 소고기 단면의 육질을 다른 배경으로 부터 분리 
-		- mIoU: 0.8911, val mIoU: 0.9384 
-
-	-  Classification   
-
-		- ResNet50
-		- Segmentation mask를 사용하여 배경을 제거하여 classification
+![Slide12](https://user-images.githubusercontent.com/4301916/147237487-c547a6a3-d47b-4c9d-93db-779c7718326b.jpg)
+![Slide13](https://user-images.githubusercontent.com/4301916/147237499-9a5e93e7-dd8d-4ccd-a11b-e2575266aaeb.jpg)
+![Slide14](https://user-images.githubusercontent.com/4301916/147237505-30aa9e84-001c-4c52-9a2a-bad270923aff.jpg)
+![Slide15](https://user-images.githubusercontent.com/4301916/147237513-b40941cb-8f0d-4072-b4f9-5218bdba0351.jpg)
 
 
 ## Product Serving
