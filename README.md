@@ -17,7 +17,9 @@ Final Project in 2nd BoostCamp AI Tech 2기 by **빨간맛(CV 19조)**
 ## Dataset
 -  축산물 품질(QC) 이미지 [https://aihub.or.kr/aidata/30733]
   - Training Dataset: 69434장 
-  - Validation Dataset: 8679장 
+  - Validation Dataset: 8679장
+![Image_TrainVal](https://user-images.githubusercontent.com/4301916/147234012-482f65f3-ea5f-411a-a177-b489c632e77c.jpg)
+ 
 -  실제 판매되는 등심 데이터 수집 
   - Test Dataset: 110장 
 
