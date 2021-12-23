@@ -1,4 +1,3 @@
-# 소고기 단면을 이용한 품질 평가
 ![Slide1](https://user-images.githubusercontent.com/4301916/147236975-9ebd6015-f0d2-43b8-9e6a-2caf46fae11c.jpg)
 Final Project in 2nd BoostCamp AI Tech 2기 by **빨간맛(CV 19조)**
 
