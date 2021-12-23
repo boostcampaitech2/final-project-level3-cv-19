@@ -22,23 +22,29 @@ Final Project in 2nd BoostCamp AI Tech 2기 by **빨간맛(CV 19조)**
 
 	- Training Dataset: 69434장 
 	- Validation Dataset: 8679장
+
 ![Image_TrainVal](https://user-images.githubusercontent.com/4301916/147234012-482f65f3-ea5f-411a-a177-b489c632e77c.jpg)
  
 -  실제 판매되는 등심 데이터 수집 
 
 	- Test Dataset: 110장 
+
 ![Image_Test](https://user-images.githubusercontent.com/4301916/147234479-834a246e-61a0-4cc1-94a0-4da794ad3f44.jpg)
 
 
 ## Model
 -  2단계로 구성 (Segmentation -> Classification 2)
--  Segmentation  
-  - UNet - Encoder: ResNet50
-    - 소고기 단면의 육질을 다른 배경으로 부터 분리 
-    - mIoU: 0.8911, val mIoU: 0.9384 
--  Classification   
-  - ResNet50
-    - Segmentation mask를 사용하여 배경을 제거하여 classification
+
+	-  Segmentation
+  
+		- UNet - Encoder: ResNet50
+		- 소고기 단면의 육질을 다른 배경으로 부터 분리 
+		- mIoU: 0.8911, val mIoU: 0.9384 
+
+	-  Classification   
+
+		- ResNet50
+		- Segmentation mask를 사용하여 배경을 제거하여 classification
 
 ## Product Serving
 -  MObile Application
