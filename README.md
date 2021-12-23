@@ -10,7 +10,7 @@ Final Project in 2nd BoostCamp AI Tech 2기 by **빨간맛(CV 19조)**
 ## Project Overview
 -  소고기 단면을 이용한 품질 평가
 
-  - 실생활에서 내가 먹는 고기의 육질을 평가해주는 한우 등심 분류기
+	- 실생활에서 내가 먹는 고기의 육질을 평가해주는 한우 등심 분류기
 
 -  프로젝트 배경 및 기대효과
 
