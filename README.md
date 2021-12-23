@@ -7,6 +7,7 @@ Final Project in 2nd BoostCamp AI Tech 2기 by **빨간맛(CV 19조)**
 - [Model](#Model)
 - [Product Serving](#Product-Serving)
 
+
 ## Project Overview
 -  소고기 단면을 이용한 품질 평가
 
@@ -16,6 +17,7 @@ Final Project in 2nd BoostCamp AI Tech 2기 by **빨간맛(CV 19조)**
 
 	- 소비자로서 실생활에서 내가 먹는 소고기 등급이 맞는 지 검증
 	- 부스트캠프를 통해서 배운 AI 지식을 실생활에 활용
+
 
 ## Dataset
 -  축산물 품질(QC) 이미지 [https://aihub.or.kr/aidata/30733]
@@ -37,7 +39,7 @@ Final Project in 2nd BoostCamp AI Tech 2기 by **빨간맛(CV 19조)**
 
 	-  Segmentation
   
-		- UNet - Encoder: ResNet50
+		- UNet (Encoder: ResNet50)
 		- 소고기 단면의 육질을 다른 배경으로 부터 분리 
 		- mIoU: 0.8911, val mIoU: 0.9384 
 
@@ -46,8 +48,9 @@ Final Project in 2nd BoostCamp AI Tech 2기 by **빨간맛(CV 19조)**
 		- ResNet50
 		- Segmentation mask를 사용하여 배경을 제거하여 classification
 
+
 ## Product Serving
--  MObile Application
+-  Mobile Application
 ![Slide17](https://user-images.githubusercontent.com/4301916/147235398-abd09838-8de0-486f-ba47-dc18ace445a1.jpg)
 ![Slide20](https://user-images.githubusercontent.com/4301916/147235450-21ea19bc-75e1-4e01-aaf6-340911114348.jpg)
    
