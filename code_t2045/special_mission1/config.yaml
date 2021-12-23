@@ -1,0 +1,16 @@
+classes:
+  0:
+  - Metal
+  1:
+  - Paper
+  2:
+  - Paperpack
+  3:
+  - Plastic
+  4:
+  - Plasticbag
+  5:
+  - Styrofoam
+
+#model_path: ../../../assets/mask_task/model.pth
+model_path: /opt/ml/code/exp/latest/best.pt 
