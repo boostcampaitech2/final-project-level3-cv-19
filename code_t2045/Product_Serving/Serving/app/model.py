@@ -48,11 +48,9 @@ def _transform_image(image_bytes: bytes):
     transform = albumentations.Compose(
         [
             #albumentations.Resize(height=512, width=384),
-            #albumentations.Resize(height=512, width=512),
-            #albumentations.CenterCrop(200, 200), #No#
-            albumentations.CenterCrop(100, 100), 
+            albumentations.CenterCrop(100, 100),
+            albumentations.Normalize(mean=DATASET_NORMALIZE_INFO["COW"]["MEAN"], std=DATASET_NORMALIZE_INFO["COW"]["STD"]),
             #albumentations.Normalize(mean=(0.5, 0.5, 0.5), std=(0.2, 0.2, 0.2)),
-            albumentations.Normalize(mean=DATASET_NORMALIZE_INFO["COW"]["MEAN"]  , std=DATASET_NORMALIZE_INFO["COW"]["STD"]),
             albumentations.pytorch.transforms.ToTensorV2(),
         ]
     )
@@ -76,7 +74,7 @@ def predict_from_image_byte(model: MyEfficientNet, image_bytes: bytes, config: D
 
 
 #def get_config(config_path: str = "../../assets/mask_task/config.yaml"):
-def get_config(config_path: str = "/opt/ml/zzs/part3/01-fastapi/app/config.yaml"):
+def get_config(config_path: str = "./app/config.yaml"):
     import yaml
 
     with open(config_path, "r") as f:

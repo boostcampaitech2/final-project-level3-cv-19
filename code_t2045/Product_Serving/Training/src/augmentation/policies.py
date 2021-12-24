@@ -26,15 +26,10 @@ def simple_augment_train(
     """Simple data augmentation rule for training CIFAR100."""
     return transforms.Compose(
         [
-            SquarePad(),
-            transforms.Resize((int(img_size * 1.2), int(img_size * 1.2))),
-            transforms.RandomResizedCrop(
-                size=img_size, ratio=(0.75, 1.0, 1.3333333333333333)
-            ),
             transforms.RandomVerticalFlip(),  #new
             transforms.RandomHorizontalFlip(),
             transforms.RandomRotation((-180, 180)),   #new
-            
+            transforms.CenterCrop((200,200)), 
             transforms.ToTensor(),
             transforms.Normalize(
                 DATASET_NORMALIZE_INFO[dataset]["MEAN"],
@@ -50,8 +45,7 @@ def simple_augment_test(
     """Simple data augmentation rule for testing CIFAR100."""
     return transforms.Compose(
         [
-            SquarePad(),
-            transforms.Resize((img_size, img_size)),
+            transforms.CenterCrop((200,200)), 
             transforms.ToTensor(),
             transforms.Normalize(
                 DATASET_NORMALIZE_INFO[dataset]["MEAN"],
