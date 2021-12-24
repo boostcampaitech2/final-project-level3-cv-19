@@ -1,5 +1,10 @@
-![Slide1](https://user-images.githubusercontent.com/4301916/147236975-9ebd6015-f0d2-43b8-9e6a-2caf46fae11c.jpg)
-Final Project in 2nd BoostCamp AI Tech 2기 by **빨간맛(CV 19조)**
+# 🥩🥩 소고기 단면을 이용한 품질 평가 🥩🥩
+
+## Team - CV - 19조 - 빨간맛 - Final Project
+|김원석|정승균|정효찬|조준희|한태호|
+|:-:|:-:|:-:|:-:|:-:|
+|<img src="src/profile_kws.png" width='100px'></a>|<img src="src/profile_jsg.png" width='100px'></a>|<img src="src/profile_jhc.png" width='100px'></a>|<img src="src/profile_jjh.png" width='100px'></a>|<img src="src/profile_hth.png" width='100px'></a>|
+
 
 ## Content
 - [Project Overview](#Project-Overview)
