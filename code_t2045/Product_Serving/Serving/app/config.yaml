@@ -11,4 +11,4 @@ classes:
   - two
 
 #model_path: ../../../assets/mask_task/model.pth
-model_path: /opt/ml/lp/code_t2045/exp/latest/best.pt 
+model_path: ../Training/exp/latest/best.pt    
