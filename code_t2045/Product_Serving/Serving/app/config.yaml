@@ -1,0 +1,14 @@
+classes:
+  0:
+  - one
+  1:
+  - onep
+  2:
+  - onepp 
+  3:
+  - three
+  4:
+  - two
+
+#model_path: ../../../assets/mask_task/model.pth
+model_path: /opt/ml/lp/code_t2045/exp/latest/best.pt 
