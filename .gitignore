@@ -1,1 +1,4 @@
-.ipynb_checkpoints
+saved/*
+cam/*
+__pycache__/*
+*/__pycache__/*
