@@ -48,7 +48,7 @@ def _transform_image(image_bytes: bytes):
     transform = albumentations.Compose(
         [
             #albumentations.Resize(height=512, width=384),
-            albumentations.CenterCrop(100, 100),
+            albumentations.CenterCrop(200, 200),
             albumentations.Normalize(mean=DATASET_NORMALIZE_INFO["COW"]["MEAN"], std=DATASET_NORMALIZE_INFO["COW"]["STD"]),
             #albumentations.Normalize(mean=(0.5, 0.5, 0.5), std=(0.2, 0.2, 0.2)),
             albumentations.pytorch.transforms.ToTensorV2(),
